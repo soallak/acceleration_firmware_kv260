@@ -6,7 +6,9 @@ set(CMAKE_VERBOSE_MAKEFILE:BOOL ON) # pushed to here, instead of as within
 
 set(FIRMWARE_DIR __FIRMWARE_DIR__)
 set(INSTALL_DIR __INSTALL_DIR__)
-set(COMPILER_INSTALL_DIR __COMPILER_INSTALL_DIR__)
+# TODO(soallak): Add support for custom sysroot and compiker installation paths
+#set(COMPILER_INSTALL_DIR __COMPILER_INSTALL_DIR__)
+#set(SYSROOT_INSTALL_DIR __SYSROOT_INSTALL_DIR__)
 
 # Specify the cross compiler
 set(COMPILER_INSTALL_DIR /opt/aarch64-linux-gnu-kv260-ubuntu-20.04)
@@ -14,7 +16,8 @@ set(CMAKE_C_COMPILER ${COMPILER_INSTALL_DIR}/bin/aarch64-linux-gnu-gcc)
 set(CMAKE_CXX_COMPILER ${COMPILER_INSTALL_DIR}/bin/aarch64-linux-gnu-g++)
 
 # Specify the target file system
-set(CMAKE_SYSROOT /home/swallak/Dev/work/plc2/kv260/crosscompiler/sysroot)
+set(SYSROOT_INSTALL_DIR /opt/sysroot-kv260-ubuntu-20.04/)
+set(CMAKE_SYSROOT ${SYSROOT_INSTALL_DIR})
 set(CMAKE_FIND_ROOT_PATH "${INSTALL_DIR}-kv260-soallak" ${CMAKE_SYSROOT}
                          ${CMAKE_SYSROOT}/opt/ros/foxy/)
 
