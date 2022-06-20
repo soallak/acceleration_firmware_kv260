@@ -24,10 +24,14 @@ Generating `sd_card.img` using. `colcon acceleration linux vanilla --install-dir
 
 The tars under `toolchain` directory must be extracted under `/opt/`. This might require privileged:
 permissions
+ 
+ 1. Download and unzip release toolchain.zip
+ 2. Extract toolchain components:
+  ```bash
+  sudo tar -C /opt/ -x -f toolchain/aarch64-linux-gnu-kv260-ubuntu-20.04.tar.gz
+  sudo tar -C /opt/ -x -f toolchain/kv260-ubuntu-20.04.tar.gz
+  ```
 
-```
-sudo tar -C /opt/ -x -f toolchain/aarch64-linux-gnu-kv260-ubuntu-20.04.tar.gz
-sudo tar -C /opt/ -x -f toolchain/kv260-ubuntu-20.04.tar.gz
-```
+
 
 
